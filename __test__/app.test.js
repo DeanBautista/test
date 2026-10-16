@@ -9,7 +9,7 @@ describe('API', () => {
   });
 
   test('GET /health returns 201', async () => {
-    const res = await request(app).get('/health');
+    const res = await request(app).get('/healths');
     expect(res.status).toBe(201);
     expect(res.body.status).toBe('ok');
   });

@@ -8,6 +8,12 @@ describe('API', () => {
     expect(res.body.status).toBe('ok');
   });
 
+  test('GET /health returns 201', async () => {
+    const res = await request(app).get('/health');
+    expect(res.status).toBe(201);
+    expect(res.body.status).toBe('ok');
+  });
+
   test('unknown route returns 404', async () => {
     const res = await request(app).get('/does-not-exist');
     expect(res.status).toBe(404);
@@ -25,3 +31,4 @@ describe('API', () => {
     expect(res.status).toBe(200);
   });
 });
+

@@ -5,6 +5,8 @@ app.use(express.json());
 
 app.get('/health', (req, res) => res.status(200).json({ status: 'ok' }));
 
+app.get('/healths', (req, res) => res.status(200).json({ status: 'ok' }));
+
 app.post('/api/auth/login', (req, res) => {
   const { email, password } = req.body || {};
   if (!email || !password) {
